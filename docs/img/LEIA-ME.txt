@@ -1,0 +1,22 @@
+Fotos em uso no site
+===================
+
+estrada.jpg — Feli Art / Pexels
+https://www.pexels.com/photo/white-truck-on-road-6940962/
+Uso: topo. Caminhão baú em estrada; imagem ilustrativa, não é a frota da DCG.
+
+transporte-sofa.jpg — RDNE Stock project / Pexels
+https://www.pexels.com/photo/close-up-shot-of-men-carrying-a-couch-7464393/
+Uso: serviços. Transporte de sofá na calçada; imagem ilustrativa.
+
+carga-carreto.jpg — Tiger Lily / Pexels
+https://www.pexels.com/photo/men-taking-boxes-out-of-van-4487512/
+Uso: cuidado. Carga e descarga de caixas; imagem ilustrativa.
+
+Licença: https://www.pexels.com/license/
+Fotos hospedadas localmente. Fontes e créditos registrados apenas neste arquivo.
+Imagens horizontais 3:2. Largura máxima de 520 px (420 px em celulares),
+altura automática e largura limitada ao contêiner. A altura não usa os
+valores intrínsecos do HTML como tamanho fixo de exibição.
+
+As demais imagens desta pasta foram preservadas, mas não são usadas no site.

@@ -5,7 +5,6 @@
 <title>DCG Transportes — Mudanças, fretes e carretos em São Paulo</title>
 <meta name="description" content="Preço justo e cuidado com seus móveis. Mudanças, fretes e carretos em São Paulo, interior e outros estados. Orçamento pelo WhatsApp.">
 <meta name="theme-color" content="#ffffff">
-<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%232b4c7e'/%3E%3Ctext x='16' y='21' text-anchor='middle' font-family='Arial' font-weight='500' font-size='12' fill='%23fff'%3EDCG%3C/text%3E%3C/svg%3E">
 
 <meta property="og:type" content="website">
 <meta property="og:locale" content="pt_BR">
@@ -24,17 +23,19 @@
 /* ORYZO — tipografia (escala ancorada em 51/41/29/24/18, fluida para caber no celular) */
 --font:'Archivo',ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
 --font-legal:Arial,ui-sans-serif,system-ui,sans-serif;
---text-display:clamp(34px,6.4vw,51px);--leading-display:.9;
---text-heading:clamp(27px,4.4vw,41px);--leading-heading:.9;
---text-heading-sm:clamp(20px,2.4vw,24px);--leading-heading-sm:1.09;
---text-body:clamp(19px,2.3vw,29px);--leading-body:1.26;
+--text-display:clamp(31px,4.6vw,44px);--leading-display:.9;
+--text-heading:clamp(25px,3.2vw,33px);--leading-heading:.9;
+--text-heading-sm:clamp(18px,1.7vw,21px);--leading-heading-sm:1.09;
+--text-body:clamp(17px,1.4vw,19px);--leading-body:1.26;
 --text-subheading:18px;
 --w-regular:400;--w-medium:500;
 /* ORYZO — espaco */
 --s6:6px;--s8:8px;--s10:10px;--s12:12px;--s14:14px;--s18:18px;--s24:24px;--s31:31px;--s41:41px;--s45:45px;--s68:68px;--s204:204px;
 /* ORYZO — raios: os quatro valores sao todo o vocabulario */
 --r-card:12px;--r-ghost:22.5px;--r-pill:36px;--r-input:0px;
---gutter:clamp(20px,5vw,45px)}
+--gutter:clamp(20px,5vw,45px);
+/* ORYZO — largura util: o conteudo para de esticar em telas grandes */
+--max:1180px;--edge:max(var(--gutter),(100% - var(--max))/2)}
 
 *{box-sizing:border-box}
 html{scroll-behavior:smooth;scroll-padding-top:84px}
@@ -52,13 +53,13 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible{ou
 .u{text-transform:uppercase;font-weight:var(--w-medium);letter-spacing:0}
 .micro{font-size:12px;line-height:1.2}
 .legal{font-family:var(--font-legal);font-size:8px;line-height:1.2;text-transform:uppercase;font-weight:var(--w-medium);color:var(--muted)}
-.corpo{font-size:var(--text-body);line-height:var(--leading-body);font-weight:var(--w-regular);text-transform:none;letter-spacing:0;max-width:22ch}
+.corpo{font-size:var(--text-body);line-height:var(--leading-body);font-weight:var(--w-regular);text-transform:none;letter-spacing:0;max-width:32ch}
 .display{font-size:var(--text-display);line-height:var(--leading-display);font-weight:var(--w-medium);text-transform:uppercase;letter-spacing:0}
 .heading{font-size:var(--text-heading);line-height:var(--leading-heading);font-weight:var(--w-medium);text-transform:uppercase;letter-spacing:0}
 .heading-sm{font-size:var(--text-heading-sm);line-height:var(--leading-heading-sm);font-weight:var(--w-medium);text-transform:uppercase}
 .ember{color:var(--ember)}
 .tracejo{border:0;border-top:1px dashed var(--cork);height:0}
-.faixa{width:100%;padding-inline:var(--gutter)}
+.faixa{width:100%;padding-inline:var(--edge)}
 
 /* botao preenchido: a unica superficie solida do sistema */
 .pill{display:inline-flex;align-items:center;justify-content:center;gap:var(--s12);min-height:48px;padding:14px var(--s24);border-radius:var(--r-pill);background:var(--bark);color:var(--on-bark);font-size:14px;text-transform:uppercase;font-weight:var(--w-medium);transition:background-color .18s ease,color .18s ease}
@@ -73,7 +74,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible{ou
 .pular:focus{top:12px}
 
 /* ---- navegacao fixa, transparente, 4 itens ---- */
-.nav{position:fixed;inset:0 0 auto;z-index:20;display:flex;align-items:center;justify-content:space-between;gap:var(--s18);padding:var(--s18) var(--gutter);background:linear-gradient(var(--walnut) 55%,transparent)}
+.nav{position:fixed;inset:0 0 auto;z-index:20;display:flex;align-items:center;justify-content:space-between;gap:var(--s18);padding:var(--s18) var(--edge);background:linear-gradient(var(--walnut) 82%,rgba(255,255,255,0))}
 .marca{display:inline-block;min-height:44px;padding-block:6px;font-size:14px;text-transform:uppercase;font-weight:var(--w-medium);line-height:1}
 .marca i{font-style:normal;display:block;font-size:8px;color:var(--muted);margin-top:3px}
 .nav-itens{display:none;gap:var(--s24);align-items:center}
@@ -85,7 +86,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible{ou
 .serial{display:none;position:fixed;right:10px;top:50%;z-index:15;transform:translateY(-50%) rotate(90deg);transform-origin:center;white-space:nowrap;font-size:10px;text-transform:uppercase;color:var(--muted);letter-spacing:0}
 
 /* ---- hero ---- */
-.hero{min-height:100svh;display:flex;flex-direction:column;justify-content:flex-end;gap:var(--s24);padding:120px var(--gutter) var(--s41)}
+.hero{display:flex;flex-direction:column;gap:var(--s14);padding:120px var(--edge) var(--s45)}
 .hero-tag{font-size:12px;text-transform:uppercase;color:var(--muted)}
 .hero h1{font-size:var(--text-display);line-height:var(--leading-display);font-weight:var(--w-medium);text-transform:uppercase;letter-spacing:0;margin-top:var(--s12)}
 .hero-corpo{margin-top:var(--s24);max-width:28ch}
@@ -98,10 +99,10 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible{ou
 .cartao .nota{font-size:var(--text-heading-sm);text-transform:uppercase;font-weight:var(--w-medium)}
 
 /* ---- secao de revelacao: tres colunas, objeto ao centro ---- */
-.revela{min-height:100svh;display:grid;align-content:center;gap:var(--s41);padding:var(--s68) var(--gutter);border-top:1px dashed var(--cork)}
+.revela{display:grid;align-content:center;gap:var(--s41);padding:var(--s68) var(--edge);border-top:1px dashed var(--cork)}
 .revela-grade{display:grid;gap:var(--s31)}
 .objeto{display:grid;place-items:center;gap:var(--s18);padding:var(--s41) 0;text-align:center}
-.objeto b{display:block;font-size:clamp(64px,16vw,140px);line-height:.9;font-weight:var(--w-medium);letter-spacing:0}
+.objeto b{display:block;font-size:clamp(48px,6.5vw,80px);line-height:.9;font-weight:var(--w-medium);letter-spacing:0}
 .objeto span{font-size:12px;text-transform:uppercase;color:var(--muted)}
 
 /* ---- listas de servico ---- */
@@ -113,7 +114,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible{ou
 .itens em{display:block;font-style:normal;font-size:14px;font-weight:var(--w-regular);text-transform:none;color:var(--cream);opacity:.75;margin-top:6px;max-width:44ch}
 
 /* ---- formulario: so linha, sem caixa ---- */
-.orc{border-top:1px dashed var(--cork);padding:var(--s68) var(--gutter)}
+.orc{border-top:1px dashed var(--cork);padding:var(--s68) var(--edge)}
 .orc-grade{display:grid;gap:var(--s41)}
 .painel{border-radius:var(--r-card);border:1px solid var(--cork);padding:var(--s24);min-width:0}
 .painel-topo{display:flex;justify-content:space-between;align-items:center;gap:var(--s12);font-size:12px;text-transform:uppercase}
@@ -132,7 +133,7 @@ legend{font-size:var(--text-heading-sm);line-height:var(--leading-heading-sm);te
 .campo{display:grid;gap:var(--s8);min-width:0}
 .campo label{font-size:12px;text-transform:uppercase;font-weight:var(--w-medium);color:var(--muted)}
 .campo input,.campo select{width:100%;min-width:0;min-height:44px;border:0;border-bottom:1px solid var(--cream);border-radius:var(--r-input);background:transparent;padding:1px 2px 10px;font-size:16px;font-weight:var(--w-regular);appearance:none}
-.campo select{background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%230f1e33' stroke-width='1.4' fill='none'/%3E%3C/svg%3E") right 2px center/12px no-repeat}
+.campo select{appearance:auto}
 .campo input::placeholder{color:var(--muted);opacity:1}
 .campo input:focus,.campo select:focus{outline:0;border-bottom-color:var(--ember)}
 .campo input:focus-visible,.campo select:focus-visible{outline:2px solid var(--cream);outline-offset:3px}
@@ -155,44 +156,62 @@ legend{font-size:var(--text-heading-sm);line-height:var(--leading-heading-sm);te
 .horas .fechado td{color:var(--ember)}
 
 /* ---- rodape ---- */
-.rodape{border-top:1px dashed var(--cork);padding:var(--s45) var(--gutter) var(--s31);display:grid;gap:var(--s31)}
+.rodape{border-top:1px dashed var(--cork);padding:var(--s45) var(--edge) var(--s31);display:grid;gap:var(--s31)}
 .rodape address{font-style:normal;font-size:14px;line-height:1.7;font-weight:var(--w-regular);text-transform:none;color:var(--cream);opacity:.8}
 .rodape-base{display:flex;justify-content:space-between;gap:var(--s18);flex-wrap:wrap;align-items:center;border-top:1px dashed var(--cork);padding-top:var(--s18);font-size:12px;text-transform:uppercase;color:var(--muted)}
 
 /* ---- whatsapp: ghost, nao compete com o CTA ---- */
 .zap{position:fixed;right:var(--gutter);bottom:20px;z-index:18;display:grid;place-items:center;width:52px;height:52px;border-radius:9999px;border:1px solid var(--cream);background:var(--walnut);transition:background-color .18s ease}
 .zap:hover{background:var(--cream)}
-.zap svg{width:24px;height:24px;fill:var(--cream)}
-.zap:hover svg{fill:var(--walnut)}
+.zap{font-size:12px;text-transform:uppercase;font-weight:var(--w-medium)}
 @supports(padding:env(safe-area-inset-bottom)){.zap{bottom:calc(20px + env(safe-area-inset-bottom))}}
 
 @media(min-width:768px){
 .nav-itens{display:flex}
 .tel-nav{display:inline-flex}
 .serial{display:block}
-.hero{padding-top:150px}
+.hero{padding-top:132px}
 .hero-corpo{max-width:32ch}
-.revela-grade{grid-template-columns:1fr auto 1fr;align-items:center;gap:var(--s18)}
-.revela-grade .corpo{justify-self:end;text-align:left}
-.itens li{grid-template-columns:44px 1fr 1fr;gap:var(--s24)}
-.itens em{margin-top:0}
-.orc-grade{grid-template-columns:minmax(0,1fr) minmax(380px,520px);gap:var(--s68);align-items:start}
+/* UMA grade para toda a pagina: recuo do numero | titulo | descricao.
+   Todo bloco abaixo usa estas mesmas tres colunas, entao as bordas se alinham. */
+.revela-grade,.itens li,.rodape,.vozes{grid-template-columns:44px minmax(0,1fr) minmax(0,1fr);column-gap:var(--s24)}
+.revela-grade>*{grid-column:3}
+.revela-grade>h2{grid-column:1/3;grid-row:1}
+.revela-grade .corpo{max-width:none}
+.objeto{justify-items:start;text-align:left;padding:0}
+.itens em{margin-top:0;max-width:none}
 .painel{padding:var(--s31)}
+.vozes>:nth-child(odd){grid-column:2}
+.vozes>:nth-child(even){grid-column:3}
+.rodape>:first-child{grid-column:1/3}
+.rodape>.pill{grid-column:3;justify-self:start}
 .par{gap:var(--s24)}
 .campos.dois{grid-template-columns:1fr 1fr}
-.rodape{grid-template-columns:1fr auto;align-items:start}
+}
+@media(min-width:900px){
+.hero{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);align-items:start;column-gap:var(--s41);row-gap:0}
+.hero>*:not(.fig){grid-column:1}
+.hero>figure.fig{grid-column:2;grid-row:1/6;align-self:center;justify-self:end;margin:0;max-width:520px}
+.hero>.fig .foto{aspect-ratio:3/2;object-position:center}
+.hero>.fig figcaption{padding-left:var(--s8)}
+}
+/* o painel do formulario so vai para a coluna 3 quando ela couber sem apertar os campos */
+@media(min-width:1000px){
+.orc-grade{grid-template-columns:44px minmax(0,1fr) minmax(0,1fr);column-gap:var(--s24)}
+.orc-grade>:first-child{grid-column:1/3}
+.orc-grade>.painel{grid-column:3}
+.revela>figure.fig{justify-self:end}
 }
 @media(min-width:1200px){.hero h1{max-width:16ch}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important;animation:none!important}}
-
-/* ---- ilustracoes ---- */
-.ilustra{display:block;width:100%;height:auto;margin:var(--s31) 0 0;color:var(--bark)}
-.ilustra-hero{margin-top:var(--s41)}
-.ilustra figcaption,.legenda{font-size:12px;text-transform:uppercase;font-weight:var(--w-medium);color:var(--muted);margin-top:var(--s10)}
-figure.fig{margin:var(--s31) 0 0}
+/* ---- fotos: proporcao fixa, sem pulo de layout ---- */
+figure.fig{margin:var(--s18) 0 0;width:100%;max-width:520px;min-width:0}
+.foto{display:block;width:100%;max-width:100%;height:auto;aspect-ratio:3/2;object-fit:cover;object-position:center;border-radius:var(--r-card);background:var(--cork)}
+.fig figcaption{font-size:12px;text-transform:uppercase;font-weight:var(--w-medium);color:var(--muted);margin-top:var(--s10)}
+.hero>.fig{align-self:center}
+@media(max-width:599px){figure.fig{max-width:420px}.hero .cartao{margin-top:var(--s18)}.hero-acoes{margin-top:var(--s18)}}
 /* ---- depoimentos ---- */
 .vozes{display:grid;gap:var(--s24);margin-top:var(--s31)}
-@media(min-width:760px){.vozes{grid-template-columns:repeat(3,1fr)}}
 .vozes blockquote{margin:0;border-top:2px solid var(--cream);padding-top:var(--s14)}
 .vozes q{quotes:none;display:block;font-size:var(--text-heading-sm);line-height:var(--leading-heading-sm);font-weight:var(--w-medium)}
 .vozes q:before{content:"\201C"}
@@ -236,27 +255,8 @@ figure.fig{margin:var(--s31) 0 0}
   </div>
 
   <figure class="fig">
-  <svg class="ilustra ilustra-hero" viewBox="0 0 640 210" role="img" aria-label="Caminhao bau da DCG Transportes, visto de lado">
-    <g fill="none" stroke="currentColor" stroke-width="3" stroke-linejoin="round">
-      <path d="M26 150V54h300v96" />
-      <path d="M326 150V84h96l52 46v20" />
-      <path d="M340 96h68l36 32h-104z" fill="var(--cork)" stroke="none"/>
-      <path d="M340 96h68l36 32h-104z" />
-      <path d="M26 150h588" stroke-width="4"/>
-      <path d="M52 54h274" stroke-dasharray="7 9"/>
-      <path d="M96 78h164M96 100h112" stroke-width="2" opacity=".55"/>
-    </g>
-    <g fill="none" stroke="currentColor" stroke-width="3">
-      <circle cx="132" cy="150" r="26" fill="var(--walnut)"/><circle cx="132" cy="150" r="9"/>
-      <circle cx="456" cy="150" r="26" fill="var(--walnut)"/><circle cx="456" cy="150" r="9"/>
-    </g>
-    <text x="96" y="78" font-family="var(--font)" font-size="26" font-weight="600" fill="currentColor"
-          letter-spacing="1" dy="-14">DCG</text>
-    <g stroke="var(--drift)" stroke-width="3" stroke-linecap="round" opacity=".8">
-      <path d="M600 74h-52M624 98h-64M608 122h-40"/>
-    </g>
-  </svg>
-  <figcaption>[FOTO: substituir pela foto do caminhao da DCG]</figcaption>
+    <img class="foto" src="img/estrada.jpg" alt="Caminhão baú branco em uma estrada" width="1200" height="800" loading="eager" fetchpriority="high" decoding="async">
+    <figcaption>Fretes, carretos e mudanças.</figcaption>
   </figure>
 </header>
 
@@ -272,6 +272,10 @@ figure.fig{margin:var(--s31) 0 0}
     <li><span>03</span><strong>Montagem e desmontagem</strong><em>Dos móveis que precisarem sair inteiros.</em></li>
     <li><span>04</span><strong>Com ou sem ajudantes</strong><em>Você decide quantas mãos entram no serviço.</em></li>
   </ul>
+  <figure class="fig">
+    <img class="foto" src="img/transporte-sofa.jpg" alt="Dois profissionais transportando um sofá pela calçada" width="1000" height="667" loading="lazy" decoding="async">
+    <figcaption>Do móvel avulso à mudança completa.</figcaption>
+  </figure>
 </section>
 
 <section class="revela" id="cuidado" aria-labelledby="cuidado-t">
@@ -287,31 +291,8 @@ figure.fig{margin:var(--s31) 0 0}
   </ul>
   
   <figure class="fig">
-  <svg class="ilustra" viewBox="0 0 640 260" role="img"
-       aria-label="Corte mostrando as tres camadas de protecao: plastico bolha, manta e filme stretch">
-    <rect x="40" y="40" width="380" height="180" fill="var(--cork)" opacity=".35"/>
-    <rect x="40" y="40" width="380" height="180" fill="none" stroke="currentColor" stroke-width="3" stroke-dasharray="6 8"/>
-    <rect x="72" y="66" width="316" height="128" fill="var(--cork)" opacity=".6"/>
-    <rect x="72" y="66" width="316" height="128" fill="none" stroke="currentColor" stroke-width="3"/>
-    <rect x="108" y="92" width="244" height="76" fill="var(--walnut)" stroke="currentColor" stroke-width="3"/>
-    <g fill="currentColor" opacity=".45">
-      <circle cx="92" cy="86" r="5"/><circle cx="112" cy="86" r="5"/><circle cx="132" cy="86" r="5"/>
-      <circle cx="92" cy="176" r="5"/><circle cx="112" cy="176" r="5"/><circle cx="132" cy="176" r="5"/>
-      <circle cx="348" cy="86" r="5"/><circle cx="368" cy="86" r="5"/>
-      <circle cx="348" cy="176" r="5"/><circle cx="368" cy="176" r="5"/>
-    </g>
-    <g stroke="currentColor" stroke-width="2">
-      <path d="M420 58h72M400 80h92M368 130h124"/>
-    </g>
-    <g font-family="var(--font)" font-size="17" font-weight="500" fill="currentColor">
-      <text x="500" y="64">03 Filme stretch</text>
-      <text x="500" y="86">02 Manta</text>
-      <text x="500" y="136">01 Bolha</text>
-    </g>
-    <text x="230" y="140" font-family="var(--font)" font-size="17" font-weight="500"
-          fill="currentColor" text-anchor="middle">SEU MOVEL</text>
-  </svg>
-  <figcaption>Corte das tres camadas, de dentro para fora.</figcaption>
+    <img class="foto" src="img/carga-carreto.jpg" alt="Dois trabalhadores retirando caixas do compartimento de carga de uma van" width="1000" height="667" loading="lazy" decoding="async">
+    <figcaption>Cuidado também na hora de carregar.</figcaption>
   </figure>
   <p class="corpo">Os caminhões são novos. Desmontamos e remontamos os móveis quando esse serviço faz parte do combinado. A gente acerta isso antes de carregar, não no dia.</p>
 </section>
@@ -471,27 +452,6 @@ figure.fig{margin:var(--s31) 0 0}
     <li><span>02</span><strong>Interior</strong><em>Consulte a cidade no orçamento.</em></li>
     <li><span>03</span><strong>Outros estados</strong><em>Viagem calculada caso a caso.</em></li>
   </ul>
-
-  <figure class="fig">
-  <svg class="ilustra" viewBox="0 0 640 200" role="img"
-       aria-label="Rota saindo do Imirim para a capital, o interior e outros estados">
-    <path d="M56 150C180 150 190 60 320 60S470 150 592 150" fill="none"
-          stroke="var(--cork)" stroke-width="16" stroke-linecap="round"/>
-    <path d="M56 150C180 150 190 60 320 60S470 150 592 150" fill="none"
-          stroke="currentColor" stroke-width="3" stroke-dasharray="2 16" stroke-linecap="round"/>
-    <g fill="currentColor">
-      <circle cx="56" cy="150" r="11"/>
-      <circle cx="320" cy="60" r="8"/>
-      <circle cx="592" cy="150" r="8"/>
-    </g>
-    <g font-family="var(--font)" font-size="16" font-weight="500" fill="currentColor">
-      <text x="56" y="184" text-anchor="start">IMIRIM</text>
-      <text x="320" y="40" text-anchor="middle">INTERIOR</text>
-      <text x="592" y="184" text-anchor="end">OUTROS ESTADOS</text>
-    </g>
-  </svg>
-  <figcaption>Saímos do Imirim para a capital, o interior e outros estados.</figcaption>
-  </figure>
 </section>
 
 <section class="revela" aria-labelledby="contato-t">
@@ -527,7 +487,7 @@ figure.fig{margin:var(--s31) 0 0}
   </div>
 </footer>
 
-<a class="zap" href="https://wa.me/5511947938491?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20quero%20um%20or%C3%A7amento%20de%20mudan%C3%A7a." target="_blank" rel="noopener noreferrer" aria-label="Falar no WhatsApp"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.16-.17.2-.35.22-.64.08-.3-.15-1.26-.46-2.39-1.48-.88-.79-1.48-1.76-1.65-2.06-.17-.3-.02-.46.13-.6.13-.14.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.03-.52-.07-.15-.67-1.61-.91-2.2-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.8.37-.27.3-1.03 1.02-1.03 2.48 0 1.46 1.06 2.87 1.21 3.07.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.69.62.71.23 1.36.2 1.87.12.57-.09 1.76-.72 2-1.41.25-.7.25-1.29.18-1.42-.08-.12-.27-.2-.57-.35M12.05 21.79h-.01a9.87 9.87 0 0 1-5.03-1.38l-.36-.21-3.74.98 1-3.65-.24-.37a9.86 9.86 0 0 1-1.51-5.26C2.16 6.45 6.6 2.02 12.05 2.02c2.64 0 5.12 1.03 6.99 2.9a9.83 9.83 0 0 1 2.89 6.99c0 5.45-4.44 9.88-9.88 9.88m8.41-18.3A11.82 11.82 0 0 0 12.05 0C5.5 0 .16 5.34.16 11.89c0 2.1.55 4.14 1.59 5.95L.06 24l6.3-1.65a11.88 11.88 0 0 0 5.69 1.45c6.55 0 11.89-5.34 11.89-11.89 0-3.18-1.24-6.17-3.48-8.42Z"/></svg></a>
+<a class="zap" href="https://wa.me/5511947938491?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20quero%20um%20or%C3%A7amento%20de%20mudan%C3%A7a." target="_blank" rel="noopener noreferrer" aria-label="Falar no WhatsApp">WA</a>
 
 <script>
 (()=>{'use strict';
