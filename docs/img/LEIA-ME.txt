@@ -1,8 +1,8 @@
-Fotos ilustrativas preservadas no repositório
-============================================
+Fotos ilustrativas usadas no site
+================================
 
-Estas fotos não aparecem na página atual. O briefing da DCG pede fotos da
-frota e da equipe reais, ou espaços marcados até que sejam fornecidas.
+Estas fotos são ilustrativas e não mostram a frota nem a equipe da DCG.
+As legendas da página identificam isso para o visitante.
 
 estrada.jpg — Feli Art / Pexels
 https://www.pexels.com/photo/white-truck-on-road-6940962/
@@ -17,4 +17,4 @@ https://www.pexels.com/photo/men-taking-boxes-out-of-van-4487512/
 Imagem ilustrativa de carga e descarga de caixas.
 
 Licença: https://www.pexels.com/license/
-Arquivos preservados do histórico do GitHub, sem uso na página atual.
+Arquivos servidos em docs/img para GitHub Pages e em dist/img para Sites.

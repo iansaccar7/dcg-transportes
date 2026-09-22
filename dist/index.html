@@ -93,8 +93,10 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible{ou
 .hero h1{font:800 var(--text-display)/.94 var(--font-heading);text-transform:uppercase;max-width:15ch}
 .hero-corpo{max-width:32ch}
 .hero-acoes{display:flex;flex-wrap:wrap;gap:var(--s12)}
-.foto{display:flex;align-items:flex-end;min-height:160px;border:1px solid var(--cream);background:#dedfdd;color:var(--muted);padding:var(--s18);font-size:11px;text-transform:uppercase;letter-spacing:.02em}
-.foto-hero{min-height:200px;background:#c8cbca}
+.fig{display:grid;gap:var(--s8);width:100%;max-width:520px;min-width:0}
+.fig .foto{display:block;width:100%;height:auto;aspect-ratio:3/2;object-fit:cover;border:1px solid var(--cream)}
+.fig figcaption{font-size:11px;line-height:1.35;text-transform:uppercase;color:var(--muted)}
+.foto-hero{max-width:none}
 /* prova social no hero */
 .cartao{border-top:1px solid var(--cream);padding:var(--s18) 0;max-width:420px}
 .cartao h2{font-size:12px;text-transform:uppercase;font-weight:var(--w-medium);line-height:1.5}
@@ -181,7 +183,8 @@ legend{font-size:var(--text-heading-sm);line-height:var(--leading-heading-sm);te
 .serial{display:block}
 .hero{padding-top:150px;grid-template-columns:minmax(0,1fr) minmax(320px,.8fr);column-gap:var(--s68)}
 .hero-tag,.hero h1,.hero-corpo,.hero-acoes,.cartao{grid-column:1}
-.foto-hero{grid-column:2;grid-row:1/6;min-height:520px}
+.foto-hero{grid-column:2;grid-row:1/6;min-height:520px;align-self:stretch}
+.foto-hero .foto{height:100%;aspect-ratio:auto}
 .hero-corpo{max-width:32ch}
 .revela-grade{grid-template-columns:1fr auto 1fr;align-items:center;gap:var(--s18)}
 .revela-grade .corpo{justify-self:end;text-align:left}
@@ -246,7 +249,10 @@ legend{font-size:var(--text-heading-sm);line-height:var(--leading-heading-sm);te
     <hr class="tracejo">
     <p>Preço justo e cuidado com os móveis são o que aparece nos relatos dos clientes.</p>
   </div>
-  <div class="foto foto-hero" role="img" aria-label="Espaço reservado para foto do caminhão da frota"><span>[FOTO: caminhão da frota]</span></div>
+  <figure class="fig foto-hero">
+    <img class="foto" src="img/estrada.jpg" alt="Caminhão baú branco em uma estrada" width="1200" height="800" loading="eager" fetchpriority="high" decoding="async">
+    <figcaption>Imagem ilustrativa · fretes e mudanças</figcaption>
+  </figure>
 </header>
 
 <section class="orc" id="orcamento" aria-labelledby="orc-t">
@@ -373,7 +379,6 @@ legend{font-size:var(--text-heading-sm);line-height:var(--leading-heading-sm);te
     <li><strong>Embalagem e carregamento</strong><em>Protegemos o que foi combinado e carregamos tudo para o transporte.</em></li>
     <li><strong>Montagem no destino</strong><em>No novo endereço, montamos os móveis quando esse serviço fizer parte do orçamento.</em></li>
   </ol>
-  <div class="foto" role="img" aria-label="Espaço reservado para foto da equipe carregando"><span>[FOTO: equipe carregando]</span></div>
 </section>
 
 <section class="revela" id="servicos" aria-labelledby="servicos-t">
@@ -388,6 +393,10 @@ legend{font-size:var(--text-heading-sm);line-height:var(--leading-heading-sm);te
     <li><span>03</span><strong>Montagem e desmontagem</strong><em>Para os móveis que precisarem desse serviço.</em></li>
     <li><span>04</span><strong>Com ou sem ajudantes</strong><em>Você decide quantas mãos entram no serviço.</em></li>
   </ul>
+  <figure class="fig">
+    <img class="foto" src="img/transporte-sofa.jpg" alt="Duas pessoas transportando um sofá pela calçada" width="1000" height="667" loading="lazy" decoding="async">
+    <figcaption>Imagem ilustrativa · transporte de móveis</figcaption>
+  </figure>
 </section>
 
 <section class="revela" id="cuidado" aria-labelledby="cuidado-t">
@@ -403,7 +412,10 @@ legend{font-size:var(--text-heading-sm);line-height:var(--leading-heading-sm);te
   </ul>
   <p class="corpo">Desmontamos e remontamos os móveis quando esse serviço faz parte do combinado. A gente acerta isso antes de carregar, não no dia.</p>
   <p class="corpo">Os caminhões são novos — detalhe que uma cliente também destacou na avaliação dela.</p>
-  <div class="foto" role="img" aria-label="Espaço reservado para foto de móvel embalado"><span>[FOTO: móvel embalado em manta e filme]</span></div>
+  <figure class="fig">
+    <img class="foto" src="img/carga-carreto.jpg" alt="Duas pessoas retirando caixas de uma van" width="1000" height="667" loading="lazy" decoding="async">
+    <figcaption>Imagem ilustrativa · carregamento</figcaption>
+  </figure>
 </section>
 
 <section class="revela" id="avaliacoes" aria-labelledby="avaliacoes-t">
